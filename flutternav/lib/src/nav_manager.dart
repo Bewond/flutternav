@@ -23,7 +23,16 @@ class NavManager extends ChangeNotifier {
   }
 
   Future<void> push(NavPath path) async {
-    pages.add(path.page);
+    /*
+    * The initial page is already in the page list so if you push
+    * the initial page just revert to remove all other pages.
+    * (It also solves the case of two initial pages overlapping at the first opening.)
+    * */
+    if (path.name == configuration.initialPath.name)
+      revert(path);
+    else
+      pages.add(path.page);
+
     notifyListeners();
   }
 

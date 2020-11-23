@@ -8,9 +8,11 @@ import 'package:flutternav/flutternav.dart';
 class AppRouterDelegate extends RouterDelegate<NavPath>
     with ChangeNotifier, PopNavigatorRouterDelegateMixin<NavPath> {
   final NavManager manager;
+  final void Function(List<Page>) onChange;
 
   AppRouterDelegate(NavConfiguration configuration)
-      : manager = NavManager(configuration) {
+      : manager = NavManager(configuration),
+        onChange = configuration.onChange {
     manager.addListener(notifyListeners);
   }
 
@@ -26,6 +28,9 @@ class AppRouterDelegate extends RouterDelegate<NavPath>
       value: manager,
       child: Consumer<NavManager>(
         builder: (context, manager, child) {
+          // If the function is defined notify the change.
+          onChange?.call(List.of(manager.pages));
+
           return Navigator(
             key: navigatorKey,
             onPopPage: _onPopPage,
