@@ -39,9 +39,8 @@ flutter pub get
 ### Base example
 This example shows how to use Flutternav in a simple app.
 
+**App paths** (`paths.dart`): \
 Define the classes that represent the app paths, they must extends from `NavPath`.
-
-**App paths** (`paths.dart`):
 ```
 import 'package:flutter/material.dart';
 import 'package:flutternav/flutternav.dart';
