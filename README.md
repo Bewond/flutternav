@@ -67,7 +67,7 @@ For each path you need to specify the name and a widget plus additional paramete
 Then just define a `NavConfiguration` object and specify the `parseRoute` function and the `initialPath` parameter.
 
 **Main** (`main.dart`): \
-The `routerDelegate` and the` routeInformationParser` contained in the configuration are then passed to a widget like `MaterialApp.router`.
+The `routerDelegate` and the `routeInformationParser` contained in the configuration are then passed to a widget like `MaterialApp.router`.
 
 ```dart
 class TheApp extends StatelessWidget {
@@ -108,3 +108,4 @@ class TheApp extends StatelessWidget {
   }
 }
 ```
+To simplify the writing of `parseRoute` function you can use the methods of the [Uri class](https://api.dart.dev/stable/2.10.4/dart-core/Uri-class.html) provided by dart.
