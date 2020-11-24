@@ -3,13 +3,17 @@ import 'package:provider/provider.dart';
 
 import 'package:flutternav/flutternav.dart';
 
-//
+/*
+* NavManager manages the list of pages that AppRouterDelegate uses to build
+* the Navigator widget and exposes the methods needed to manipulate this list.
+* */
 
 class NavManager extends ChangeNotifier {
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   final List<Page> pages = [];
   final NavConfiguration configuration;
 
+  //Static method for accessing to the NavManager.
   static NavManager of(BuildContext context) {
     return Provider.of<NavManager>(context, listen: false);
   }
@@ -22,6 +26,7 @@ class NavManager extends ChangeNotifier {
     pages.add(configuration.initialPath.page);
   }
 
+  //Add a new page.
   Future<void> push(NavPath path) async {
     /*
     * The initial page is already in the page list so if you push
@@ -36,16 +41,19 @@ class NavManager extends ChangeNotifier {
     notifyListeners();
   }
 
+  //Remove the last opened page.
   Future<void> pop() async {
     pages.removeLast();
     notifyListeners();
   }
 
+  //Remove a specific page.
   Future<void> remove(Page page) async {
     pages.remove(page);
     notifyListeners();
   }
 
+  //Removes all pages other than the one specified.
   Future<void> revert(NavPath path) async {
     pages.removeWhere((element) => element.name != path.name);
     notifyListeners();
