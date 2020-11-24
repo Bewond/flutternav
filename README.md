@@ -24,10 +24,10 @@ It builds on the features offered by the new API [Navigator 2.0](https://docs.go
 Add this to your package's pubspec.yaml file:
 ```yaml
 dependencies:
-  firebloc:
+  flutternav:
     git:
-      url: git://github.com/bewond/firebloc.git
-      path: firebloc
+      url: git://github.com/bewond/flutternav.git
+      path: flutternav
 ```
 #### Install
 You can install packages from the command line:
