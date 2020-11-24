@@ -39,8 +39,8 @@ flutter pub get
 ### Base example
 This example shows how to use Flutternav in a simple app.
 
-**App paths** (`paths.dart`): \
-Define the classes that represent the app paths, they must extends from `NavPath`.
+**App screens** (`paths.dart`): \
+Define the classes that represent the app screens, they must extends from `NavPath`.
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutternav/flutternav.dart';
@@ -63,11 +63,11 @@ class DetailsPath extends NavPath {
 }
 ```
 
-For each path you need to specify the name and a widget plus additional parameters if needed. \
+For each screen you need to specify the unique name and a widget plus additional parameters if needed. \
 Then just define a `NavConfiguration` object and specify the `parseRoute` function and the `initialPath` parameter.
 
 **Main** (`main.dart`): \
-The `routerDelegate` and the `routeInformationParser` contained in the configuration are then passed to a widget like `MaterialApp.router`.
+The `routerDelegate` and the `informationParser` contained in the configuration are then passed to a widget like `MaterialApp.router`.
 
 ```dart
 class TheApp extends StatelessWidget {
@@ -108,9 +108,12 @@ class TheApp extends StatelessWidget {
   }
 }
 ```
+
 To simplify the writing of `parseRoute` function you can use the methods of the [Uri class](https://api.dart.dev/stable/2.10.4/dart-core/Uri-class.html) provided by dart.
 
-**Navigate** \
+**Navigate**
+Methods available to navigate between app screens:
+
 Open a new screen:
 ```dart
 NavManager.of(context).push(DetailsPath(id: 1));
