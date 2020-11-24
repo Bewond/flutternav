@@ -64,9 +64,9 @@ class DetailsPath extends NavPath {
 ```
 
 For each screen you need to specify the unique name and a widget plus additional parameters if needed. \
-Then just define a `NavConfiguration` object and specify the `parseRoute` function and the `initialPath` parameter.
 
 **Main** (`main.dart`): \
+Then just define a `NavConfiguration` object and specify the `parseRoute` function and the `initialPath` parameter. \
 The `routerDelegate` and the `informationParser` contained in the configuration are then passed to a widget like `MaterialApp.router`.
 
 ```dart
