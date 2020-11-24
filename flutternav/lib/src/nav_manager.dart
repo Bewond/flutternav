@@ -36,7 +36,12 @@ class NavManager extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> pop(Page page) async {
+  Future<void> pop() async {
+    pages.removeLast();
+    notifyListeners();
+  }
+
+  Future<void> remove(Page page) async {
     pages.remove(page);
     notifyListeners();
   }

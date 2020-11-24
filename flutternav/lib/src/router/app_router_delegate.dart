@@ -49,7 +49,7 @@ class AppRouterDelegate extends RouterDelegate<NavPath>
   bool _onPopPage(Route<dynamic> route, dynamic result) {
     if (!route.didPop(result)) return false;
 
-    manager.pop(route.settings);
+    manager.remove(route.settings);
     return true;
   }
 }
