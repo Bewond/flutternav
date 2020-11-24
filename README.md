@@ -62,7 +62,7 @@ class DetailsPath extends NavPath {
 }
 ```
 
-For each screen you need to specify the unique name and a widget plus additional parameters if needed. \
+For each screen you need to specify the unique name and a widget plus additional parameters if needed.
 
 **Main** (`main.dart`): \
 Define a `NavConfiguration` object and specify the `parseRoute` function and the `initialPath` parameter. \
