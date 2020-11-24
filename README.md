@@ -66,7 +66,7 @@ For each screen you need to specify the unique name and a widget plus additional
 
 **Main** (`main.dart`): \
 Define a `NavConfiguration` object and specify the `parseRoute` function and the `initialPath` parameter. \
-Then the `routerDelegate` and the `informationParser` contained in the configuration are passed to a widget like `MaterialApp.router`.
+Then the `routerDelegate` and the `informationParser` contained in the configuration are passed to a widget like `MaterialApp.router` or `CupertinoApp.router`.
 
 ```dart
 class TheApp extends StatelessWidget {
