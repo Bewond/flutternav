@@ -109,3 +109,17 @@ class TheApp extends StatelessWidget {
 }
 ```
 To simplify the writing of `parseRoute` function you can use the methods of the [Uri class](https://api.dart.dev/stable/2.10.4/dart-core/Uri-class.html) provided by dart.
+
+**Navigate** \
+Open a new screen:
+```dart
+NavManager.of(context).push(DetailsPath(id: 1));
+```
+Remove the last opened screen:
+```dart
+NavManager.of(context).pop();
+```
+Return to a previously added screen (removes all screens other than the one specified):
+```dart
+NavManager.of(context).revert(StartPath());
+```
