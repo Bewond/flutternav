@@ -63,7 +63,7 @@
     },
     {
       "name": "flutternav",
-      "rootUri": "file:///D:/Src/flutter/.pub-cache/git/flutternav-0f9882bc3e5ac38e6da18567e9f7a8886077ff34/flutternav",
+      "rootUri": "file:///D:/Src/flutter/.pub-cache/git/flutternav-3616b7d7a483141de5db8595f61a41e649723fa6/flutternav",
       "packageUri": "lib/",
       "languageVersion": "2.8"
     },
@@ -176,7 +176,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-11-23T22:42:01.340069Z",
+  "generated": "2020-11-24T19:00:27.234138Z",
   "generator": "pub",
   "generatorVersion": "2.12.0-29.10.beta"
 }
