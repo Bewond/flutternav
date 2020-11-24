@@ -38,3 +38,28 @@ flutter pub get
 ## Documentation
 ### Base example
 This example shows how to use Flutternav in a simple app.
+
+Define the classes that represent the app paths, they must extends from `NavPath`.
+
+**App paths** (`paths.dart`):
+```
+import 'package:flutter/material.dart';
+import 'package:flutternav/flutternav.dart';
+
+//...
+
+class StartPath extends NavPath {
+  StartPath() : super(name: '/', widget: MainScreen());
+}
+
+class UnknownPath extends NavPath {
+  UnknownPath() : super(name: '404', widget: UnknownScreen());
+}
+
+class DetailsPath extends NavPath {
+  final int id;
+
+  DetailsPath({@required this.id})
+      : super(name: 'details/$id', widget: DetailsScreen(id: id));
+}
+```
