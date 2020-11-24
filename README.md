@@ -6,16 +6,15 @@
 A library for [Flutter](https://flutter.dev/) to simplify the use of the [navigation and routing system](https://flutter.dev/docs/development/ui/navigation) that it works consistently on all platforms, including the web.
 It builds on the features offered by the new API [Navigator 2.0](https://docs.google.com/document/d/1Q0jx0l4-xymph9O6zLaOY4d_f7YFpNWX_eGbzYxr9wY/edit#heading=h.l6kdsrb6j9id) which allows for more precise control over app screens and how to analyze routes.
 
+> Currently on the web, if you reload the page in development mode, it takes you back to the initial page. This behavior does not occur in release mode. (flutter run --release -d chrome)
+
 (Currently in beta)
 
 
 - [Overview](#overview)
 - [Installing](#installing)
 - [Documentation](#documentation)
-  * [Example of BaseRepository](#example-of-baserepository)
-  * [Example with a custom repository](#example-with-a-custom-repository)
-  * [Advanced use case](#advanced-use-case)
-  * [FireblocUtilities](#fireblocutilities)
+  * [Base example](#base-example)
 - [Maintainers](#maintainers)
 
 
@@ -66,8 +65,8 @@ class DetailsPath extends NavPath {
 For each screen you need to specify the unique name and a widget plus additional parameters if needed. \
 
 **Main** (`main.dart`): \
-Then just define a `NavConfiguration` object and specify the `parseRoute` function and the `initialPath` parameter. \
-The `routerDelegate` and the `informationParser` contained in the configuration are then passed to a widget like `MaterialApp.router`.
+Define a `NavConfiguration` object and specify the `parseRoute` function and the `initialPath` parameter. \
+Then the `routerDelegate` and the `informationParser` contained in the configuration are passed to a widget like `MaterialApp.router`.
 
 ```dart
 class TheApp extends StatelessWidget {
