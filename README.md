@@ -41,7 +41,7 @@ This example shows how to use Flutternav in a simple app.
 
 **App paths** (`paths.dart`): \
 Define the classes that represent the app paths, they must extends from `NavPath`.
-```
+```dart
 import 'package:flutter/material.dart';
 import 'package:flutternav/flutternav.dart';
 
@@ -63,10 +63,13 @@ class DetailsPath extends NavPath {
 }
 ```
 
-For each path you need to specify the name and a widget plus additional parameters if needed.
+For each path you need to specify the name and a widget plus additional parameters if needed. \
+Then just define a `NavConfiguration` object and specify the `parseRoute` function and the `initialPath` parameter.
 
-**Main** (`main.dart`):
-```
+**Main** (`main.dart`): \
+The `routerDelegate` and the` routeInformationParser` contained in the configuration are then passed to a widget like `MaterialApp.router`.
+
+```dart
 class TheApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
