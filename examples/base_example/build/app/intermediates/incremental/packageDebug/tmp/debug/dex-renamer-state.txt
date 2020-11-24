@@ -1,0 +1,4 @@
+#Tue Nov 24 21:39:36 CET 2020
+base.0=D\:\\Documenti\\GitHub\\Repository\\flutternav\\examples\\base_example\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
