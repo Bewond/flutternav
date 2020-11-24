@@ -36,5 +36,5 @@ flutter pub get
 ```
 
 ## Documentation
-### Example of BaseRepository
-This example shows how to use BaseRepository to retrieve data from a collection by creating only the data model.
+### Base example
+This example shows how to use Flutternav in a simple app.
