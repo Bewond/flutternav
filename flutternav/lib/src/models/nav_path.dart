@@ -10,7 +10,7 @@ abstract class NavPath {
   final String name;
   //The screen widget of the path.
   final Widget widget;
-  //Immutable object used to set the Navigator page stack.
+  //Immutable object used to set the NavManager pages list.
   final Page page;
 
   NavPath({

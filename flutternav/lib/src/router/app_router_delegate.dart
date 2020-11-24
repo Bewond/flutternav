@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:flutternav/flutternav.dart';
 
 /*
-* AppRouterDelegate builds the Navigator with the current list of pages
+* AppRouterDelegate builds the Navigator widget with the current list of pages
 * based on the AppInformationParser and the status of the app.
 * */
 

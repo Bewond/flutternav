@@ -26,7 +26,7 @@ class NavManager extends ChangeNotifier {
     pages.add(configuration.initialPath.page);
   }
 
-  //Add a new page.
+  //Add a new page of the specific path.
   Future<void> push(NavPath path) async {
     /*
     * The initial page is already in the page list so if you push
@@ -41,7 +41,7 @@ class NavManager extends ChangeNotifier {
     notifyListeners();
   }
 
-  //Remove the last opened page.
+  //Remove the last page.
   Future<void> pop() async {
     pages.removeLast();
     notifyListeners();
@@ -53,7 +53,7 @@ class NavManager extends ChangeNotifier {
     notifyListeners();
   }
 
-  //Removes all pages other than the one specified.
+  //Removes all pages other than the one specified by the path.
   Future<void> revert(NavPath path) async {
     pages.removeWhere((element) => element.name != path.name);
     notifyListeners();
