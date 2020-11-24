@@ -62,3 +62,46 @@ class DetailsPath extends NavPath {
       : super(name: 'details/$id', widget: DetailsScreen(id: id));
 }
 ```
+
+For each path you need to specify the name and a widget plus additional parameters if needed.
+
+**Main** (`main.dart`):
+```
+class TheApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final NavConfiguration nav = NavConfiguration(
+      initialPath: StartPath(),
+      parseRoute: _parseRoute,
+      onChange: _changePageStack,
+    );
+
+    return MaterialApp.router(
+      title: 'Flutternav Demo',
+      debugShowCheckedModeBanner: false,
+      routerDelegate: nav.routerDelegate,
+      routeInformationParser: nav.informationParser,
+    );
+  }
+
+  void _changePageStack(List<Page> pages) {
+    print(pages.map((page) => page.name).toList());
+  }
+
+  NavPath _parseRoute(RouteInformation information) {
+    var uri = Uri.parse(information.location);
+    
+    //Handle '/'
+    if (uri.pathSegments.isEmpty) return StartPath();
+    //Handle '/details/:id'
+    if (uri.pathSegments.length == 2) {
+      if (uri.pathSegments[0] == 'details') {
+        var id = int.tryParse(uri.pathSegments[1]);
+        if (id != null) return DetailsPath(id: id);
+      }
+    }
+    //Handle unknown routes
+    return UnknownPath();
+  }
+}
+```
