@@ -33,10 +33,11 @@ class NavManager extends ChangeNotifier {
     * the initial page just revert to remove all other pages.
     * (It also solves the case of two initial pages overlapping at the first opening.)
     * */
-    if (path.name == configuration.initialPath.name)
-      revert(path);
-    else
+    if (path.name == configuration.initialPath.name) {
+      await revert(path);
+    } else {
       pages.add(path.page);
+    }
 
     notifyListeners();
   }
