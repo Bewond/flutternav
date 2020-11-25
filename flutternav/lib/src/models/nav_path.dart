@@ -16,5 +16,5 @@ abstract class NavPath {
   NavPath({
     @required this.name,
     @required this.widget,
-  }) : page = MaterialPage(child: widget, key: ValueKey(name), name: name);
+  }) : page = MaterialPage(child: widget, key: UniqueKey(), name: name);
 }
