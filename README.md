@@ -51,14 +51,14 @@ class StartPath extends NavPath {
 }
 
 class UnknownPath extends NavPath {
-  UnknownPath() : super(name: '404', widget: UnknownScreen());
+  UnknownPath() : super(name: '/404', widget: UnknownScreen());
 }
 
 class DetailsPath extends NavPath {
   final int id;
 
   DetailsPath({@required this.id})
-      : super(name: 'details/$id', widget: DetailsScreen(id: id));
+      : super(name: '/details/$id', widget: DetailsScreen(id: id));
 }
 ```
 
