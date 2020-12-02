@@ -1,9 +1,9 @@
 name: flutternav
-version: 0.2.2+1
+version: 0.1.8+1
 
 
 environment:
-  sdk: ">=2.8.0 <3.0.0"
+  sdk: ">=2.10.0 <3.0.0"
 
 
 dependencies:

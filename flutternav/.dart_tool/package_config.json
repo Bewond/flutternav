@@ -65,10 +65,10 @@
       "name": "flutternav",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.8"
+      "languageVersion": "2.10"
     }
   ],
-  "generated": "2020-11-25T17:42:40.588452Z",
+  "generated": "2020-12-02T15:05:42.626312Z",
   "generator": "pub",
   "generatorVersion": "2.12.0-29.10.beta"
 }
