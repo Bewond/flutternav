@@ -10,8 +10,6 @@ It builds on the features offered by the new API [Navigator 2.0](https://docs.go
 
 (Currently in beta)
 
-
-- [Overview](#overview)
 - [Installing](#installing)
 - [Documentation](#documentation)
   * [Base example](#base-example)
