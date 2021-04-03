@@ -20,10 +20,7 @@ class MyApp extends StatelessWidget {
           path: '/',
           widget: MainScreen(),
           stacked: [
-            NavRoute(
-              path: 'details/:id',
-              widget: DetailsScreen(),
-            ),
+            NavRoute(path: 'details/:id', widget: DetailsScreen()),
           ],
         ),
         NavSubRoute(

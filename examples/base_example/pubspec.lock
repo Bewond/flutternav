@@ -77,10 +77,10 @@ packages:
     description:
       path: flutternav
       ref: HEAD
-      resolved-ref: "3028a4e5fd55ed811082a6b61627df9e68513abe"
+      resolved-ref: "21ccc30f5b6bb1d0ffb0ad9e6687d30a2aa3155b"
       url: "git://github.com/bewond/flutternav.git"
     source: git
-    version: "0.2.1"
+    version: "0.3.1"
   js:
     dependency: transitive
     description:
