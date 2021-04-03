@@ -7,8 +7,10 @@ abstract class NavElement<T> {
   T get baseElement;
 
   static List<T> toBaseElements<T>(List<NavElement> elements) {
-    List<T> result = [];
-    for (var element in elements) result.add(element.baseElement);
+    var result = <T>[];
+    for (var element in elements) {
+      result.add(element.baseElement);
+    }
 
     return result;
   }
