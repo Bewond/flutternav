@@ -14,9 +14,11 @@ However it implements a subset of the features offered by VRouter, the goal is t
 
 - [Installing](#installing)
 - [Documentation](#documentation)
-  * [Base example](#base-example)
+  * [NavElement objects](#navelement-objects)
+  * [Path parameters](#path-parameters)
+  * [Navigate](#navigate)
+  * [Named route](#named-route)
 - [Maintainers](#maintainers)
-
 
 ## Installing
 
