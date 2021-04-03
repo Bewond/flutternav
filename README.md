@@ -34,14 +34,7 @@ flutter pub get
 ```
 
 ## Documentation
-
-Use `NavRouterApp` instead of `MaterialApp` or `CupertinoApp`, you can pass all parameters you would normally use plus some new ones:
-
-- `routes`: list of `NavElement` elements to define routes (required)
-- `initialUrl`: the initial path (default: '/')
-- `routerMode`: `NavRouterModes.hash` or `NavRouterModes.history`:
-  * "hash": This is the default, the url will be serverAddress/#/localUrl
-  * "history": This will display the url in the way we are used to, without the #. However note that you will need to configure your server to make this work. 
+Use `NavRouterApp` instead of `MaterialApp` or `CupertinoApp`, you can pass all the parameters you would normally use plus some new ones like `routes` to define the app routes through the use of `NavElement` objects.
 
 ```dart
 class MyApp extends StatelessWidget {
