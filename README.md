@@ -73,7 +73,7 @@ NavRoute(
 ```
 
 **NavSubRoute** \
-Used to nest your widgets. In this example, the MenuScreen widget receives a different page as a child depending on the path.
+Used to nest widgets. In this example, the MenuScreen widget receives a different page as a child depending on the path.
 
 ```dart
 NavSubRoute(
@@ -86,7 +86,18 @@ NavSubRoute(
 ),
 ```
 
-**Navigate** (`main_screen.dart`, `details_screen.dart`): \
+**NavRedirector** \
+Used to redirect specific paths to another.
+
+```dart
+NavRedirector(
+  path: ':_(.+)', // Matches any path
+  redirect: '/404',
+),
+```
+
+## Navigate
+
 Methods available to navigate between app screens.
 
 Open a new screen:
