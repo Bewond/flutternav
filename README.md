@@ -64,7 +64,6 @@ class MyApp extends StatelessWidget {
 
 **NavRoute** \
 Used to display the given widget if the path is matched, you can stack widget from other `NavElement` on top of the given widget.
-
 ```dart
 NavRoute(
   path: '/',
@@ -77,7 +76,6 @@ NavRoute(
 
 **NavSubRoute** \
 Used to nest widgets. In this example, the MenuScreen widget receives a different page as a child depending on the path.
-
 ```dart
 NavSubRoute(
   path: '/menu',
@@ -102,7 +100,6 @@ NavRedirector(
 ### Path parameters
 
 To use the path parameters just add ":paramName" to the route path:
-
 ```dart
 NavRoute(
   path: 'details/:id',
@@ -111,7 +108,6 @@ NavRoute(
 ```
 
 To retrieve the parameter value:
-
 ```dart
 String? id = context.nav.pathData['id'];
 ```
@@ -126,7 +122,7 @@ context.nav.push('/menu/page1');
 ```
 Pushing a named route:
 ```dart
-context.nav.pushNamed('home');
+context.nav.pushNamed('page1');
 ```
 Pushing an external route:
 ```dart
@@ -134,8 +130,13 @@ context.nav.pushExternal('https://www.google.com/');
 ```
 
 ### Named route
-
 Naming a route for easier navigation using the name attribute of any `NavElement` that has a path.
+
+### NavRouterModes
+Two router mode are possible:
+
+- "hash": This is the default, the url will be "serverAddress/#/localUrl"
+- "history": This will display the url in the way we are used to, without the "#". However note that you will need to [configure your server](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations) to make this work.
 
 ---
 
