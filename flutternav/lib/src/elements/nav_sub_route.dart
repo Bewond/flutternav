@@ -3,6 +3,10 @@ import 'package:vrouter/vrouter.dart';
 
 import 'package:flutternav/src/elements/nav_element.dart';
 
+/// A [NavElement] which enable nesting.
+///
+/// [build] gives you a [Widget] which is what you should use as the child to nest.
+/// This [Widget] will be the one present in the [NavElement] in [nested] corresponding to the current route.
 class NavSubRoute extends NavElement<VRouteElement> {
   final String? path;
   final Widget Function(Widget) build;

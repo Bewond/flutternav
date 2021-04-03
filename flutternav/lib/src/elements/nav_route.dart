@@ -3,6 +3,10 @@ import 'package:vrouter/vrouter.dart';
 
 import 'package:flutternav/src/elements/nav_element.dart';
 
+/// A [NavElement] which enable to to map a [path] to a [widget] to display.
+///
+/// Widgets can be stacked on top of each other using the [stacked] parameter.
+/// Also see [NavSubRoute] if you want to widget nesting instead of stacking.
 class NavRoute extends NavElement<VRouteElement> {
   final String? path;
   final Widget widget;
