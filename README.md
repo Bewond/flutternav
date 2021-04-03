@@ -62,6 +62,8 @@ class MyApp extends StatelessWidget {
 
 ### NavElement objects
 
+NavElement objects are used to define routes and implement various functionalities.
+
 **NavRoute** \
 Used to display the given widget if the path is matched, you can stack widget from other `NavElement` on top of the given widget.
 ```dart
