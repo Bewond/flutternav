@@ -47,6 +47,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutternav Demo',
       debugShowCheckedModeBanner: false,
       routerMode: NavRouterModes.history,
+      initialUrl: '/',
       routes: [
         NavRoute(path: '/', widget: MainScreen()),
         NavRoute(path: '/404', widget: UnknownScreen()),
@@ -96,21 +97,23 @@ NavRedirector(
 ),
 ```
 
-## Navigate
+Naming a route for easier navigation using the name attribute of any `NavElement` that has a path.
 
-Methods available to navigate between app screens.
+### Navigate
 
-Open a new screen:
+Available methods for navigating between routes.
+
+Pushing a new url, is relative if you omit the '/':
 ```dart
-NavManager.of(context).push(DetailsPath(id: 1));
+context.nav.push('/menu/page1');
 ```
-Remove the last opened screen:
+Pushing a named route:
 ```dart
-NavManager.of(context).pop();
+context.nav.pushNamed('home');
 ```
-Return to a previously added screen (removes all screens other than the one specified):
+Pushing an external route:
 ```dart
-NavManager.of(context).revert(StartPath());
+context.nav.pushExternal('https://www.google.com/');
 ```
 
 ---
