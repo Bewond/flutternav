@@ -48,7 +48,6 @@ class MyApp extends StatelessWidget {
     return NavRouterApp(
       title: 'Flutternav Demo',
       debugShowCheckedModeBanner: false,
-      routerMode: NavRouterModes.history,
       initialUrl: '/',
       routes: [
         NavRoute(path: '/', widget: MainScreen()),
@@ -60,11 +59,12 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-### NavElement objects
+### NavElement
+
+`NavElement` objects are used to define routes and implement various functionalities.
 
 **NavRoute** \
 Used to display the given widget if the path is matched, you can stack widget from other `NavElement` on top of the given widget.
-
 ```dart
 NavRoute(
   path: '/',
@@ -77,7 +77,6 @@ NavRoute(
 
 **NavSubRoute** \
 Used to nest widgets. In this example, the MenuScreen widget receives a different page as a child depending on the path.
-
 ```dart
 NavSubRoute(
   path: '/menu',
@@ -102,7 +101,6 @@ NavRedirector(
 ### Path parameters
 
 To use the path parameters just add ":paramName" to the route path:
-
 ```dart
 NavRoute(
   path: 'details/:id',
@@ -110,8 +108,7 @@ NavRoute(
 ),
 ```
 
-To retrieve the parameter value:
-
+To retrieve the parameter value in the widget:
 ```dart
 String? id = context.nav.pathData['id'];
 ```
@@ -120,22 +117,27 @@ String? id = context.nav.pathData['id'];
 
 Available methods for navigating between routes.
 
-Pushing a new url, is relative if you omit the "/":
+Pushing a path, is relative if you omit the "/":
 ```dart
 context.nav.push('/menu/page1');
 ```
 Pushing a named route:
 ```dart
-context.nav.pushNamed('home');
+context.nav.pushNamed('page1');
 ```
-Pushing an external route:
+Pushing an external url:
 ```dart
 context.nav.pushExternal('https://www.google.com/');
 ```
 
 ### Named route
-
 Naming a route for easier navigation using the name attribute of any `NavElement` that has a path.
+
+### NavRouterModes
+With the `routerMode` parameter of `NavRouterApp` you can choose between:
+
+- `NavRouterModes.hash`: This is the default, the url will be "serverAddress/#/localUrl"
+- `NavRouterModes.history`: This will display the url in the way we are used to, without the "#". However note that you will need to [configure your server](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations) to make this work.
 
 ---
 
