@@ -37,77 +37,45 @@ flutter pub get
 ### Base example
 This example shows how to use Flutternav in a simple app.
 
-**App screens** (`paths.dart`): \
-Define the classes that represent the app screens, they must extends from `NavPath`.
-```dart
-import 'package:flutter/material.dart';
-import 'package:flutternav/flutternav.dart';
-
-//...
-
-class StartPath extends NavPath {
-  StartPath() : super(name: '/', widget: MainScreen());
-}
-
-class UnknownPath extends NavPath {
-  UnknownPath() : super(name: '/404', widget: UnknownScreen());
-}
-
-class DetailsPath extends NavPath {
-  final int id;
-
-  DetailsPath({@required this.id})
-      : super(name: '/details/$id', widget: DetailsScreen(id: id));
-}
-```
-
-For each screen you need to specify the unique name and a widget plus additional parameters if needed.
-
 **Main** (`main.dart`): \
-Define a `NavConfiguration` object and specify the `parseRoute` function and the `initialPath` parameter. \
-Then the `routerDelegate` and the `informationParser` contained in the configuration are passed to a widget like `MaterialApp.router` or `CupertinoApp.router`.
+Use `NavRouterApp` instead of `MaterialApp` or `CupertinoApp`, you can pass all parameters you would normally use with `MaterialApp` plus some new ones:
+- `routes`: list of `NavElement` elements to define routes (required)
+- `initialUrl`: the initial path (default: '/')
+- `routerMode`: `NavRouterModes.hash` or `NavRouterModes.history`:
+  * "hash": This is the default, the url will be serverAddress/#/localUrl
+  * "history": This will display the url in the way we are used to, without the #. However note that you will need to configure your server to make this work. 
 
 ```dart
-class TheApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final NavConfiguration nav = NavConfiguration(
-      initialPath: StartPath(),
-      parseRoute: _parseRoute,
-      onChange: _changePageStack,
-    );
-
-    return MaterialApp.router(
+    return NavRouterApp(
       title: 'Flutternav Demo',
       debugShowCheckedModeBanner: false,
-      routerDelegate: nav.routerDelegate,
-      routeInformationParser: nav.informationParser,
+      routerMode: NavRouterModes.history,
+      routes: [
+        NavRoute(
+          path: '/',
+          widget: MainScreen(),
+          stacked: [
+            NavRoute(path: 'details/:id', widget: DetailsScreen()),
+          ],
+        ),
+        NavSubRoute(
+          path: '/menu',
+          build: (child) => MenuScreen(page: child),
+          nested: [
+            NavRoute(path: 'page1', widget: Page1()),
+            NavRoute(path: 'page2', widget: Page2()),
+          ],
+        ),
+        NavRoute(path: '/404', widget: UnknownScreen()),
+        NavRedirector(path: ':_(.+)', redirect: '/404'),
+      ],
     );
-  }
-
-  void _changePageStack(List<Page> pages) {
-    print(pages.map((page) => page.name).toList());
-  }
-
-  NavPath _parseRoute(RouteInformation information) {
-    var uri = Uri.parse(information.location);
-    
-    //Handle '/'
-    if (uri.pathSegments.isEmpty) return StartPath();
-    //Handle '/details/:id'
-    if (uri.pathSegments.length == 2) {
-      if (uri.pathSegments[0] == 'details') {
-        var id = int.tryParse(uri.pathSegments[1]);
-        if (id != null) return DetailsPath(id: id);
-      }
-    }
-    //Handle unknown routes
-    return UnknownPath();
   }
 }
 ```
-
-To simplify the writing of `parseRoute` function you can use the methods of the [Uri class](https://api.dart.dev/stable/2.10.4/dart-core/Uri-class.html) provided by dart.
 
 **Navigate** (`main_screen.dart`, `details_screen.dart`): \
 Methods available to navigate between app screens.
