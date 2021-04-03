@@ -6,7 +6,8 @@
 A library for [Flutter](https://flutter.dev/) to simplify the use of the [navigation and routing system](https://flutter.dev/docs/development/ui/navigation) that it works consistently on all platforms, including the web.
 It builds on the features offered by the new API [Navigator 2.0](https://docs.google.com/document/d/1Q0jx0l4-xymph9O6zLaOY4d_f7YFpNWX_eGbzYxr9wY/edit#heading=h.l6kdsrb6j9id) which allows for more precise control over app screens and how to analyze routes.
 
-> Currently on the web, if you reload the page in development mode, it takes you back to the initial page. This behavior does not occur in release mode. (flutter run --release -d chrome)
+Flutternav starting from version 0.2.0 is built on the basis of the excellent [VRouter](https://github.com/lulupointu/vrouter) package.
+However it implements a subset of the features offered by VRouter, the goal is to keep a constant user-side API even though Flutternav may be based on a different implementation in the future.
 
 (Currently in beta)
 
