@@ -1,14 +1,19 @@
 name: flutternav
-version: 0.1.8+1
-
+description: A new Flutter package.
+version: 0.2.1
+homepage: https://github.com/Bewond/flutternav
 
 environment:
-  sdk: ">=2.10.0 <3.0.0"
-
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
   #
-  provider: ^4.3.2+2
-  pedantic: ^1.9.2
+  pedantic: ^1.11.0
+  vrouter: ^1.1.0+15
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
