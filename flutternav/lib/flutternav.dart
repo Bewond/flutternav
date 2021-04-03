@@ -1,4 +1,5 @@
-/// A Flutter package to simplify the use of the navigation and routing system that works consistently across all platforms.
+/// A Flutter package to simplify the use of the navigation and routing system
+/// that works consistently across all platforms.
 ///
 /// Flutternav uses [NavRouterApp] instead of [MaterialApp] or [CupertinoApp],
 /// with the parameter [NavRouterApp.routes] it is possible to define
