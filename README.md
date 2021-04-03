@@ -35,7 +35,8 @@ flutter pub get
 
 ## Documentation
 
-Use `NavRouterApp` instead of `MaterialApp` or `CupertinoApp`, you can pass all parameters you would normally use with `MaterialApp` plus some new ones:
+Use `NavRouterApp` instead of `MaterialApp` or `CupertinoApp`, you can pass all parameters you would normally use plus some new ones:
+
 - `routes`: list of `NavElement` elements to define routes (required)
 - `initialUrl`: the initial path (default: '/')
 - `routerMode`: `NavRouterModes.hash` or `NavRouterModes.history`:
