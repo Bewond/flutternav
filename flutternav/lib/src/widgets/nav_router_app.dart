@@ -1,13 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:vrouter/vrouter.dart';
 
 import 'package:flutternav/src/elements/nav_element.dart';
 
+/// See [NavRouterApp.routerMode].
 enum NavRouterModes { hash, history }
 
+/// Flutternav use [NavRouterApp] instead of [MaterialApp] or [CupertinoApp].
+///
+/// You can pass all the parameters you would normally use plus some new ones
+/// like [routes] to define the app routes through the use of [NavElement] objects.
 class NavRouterApp extends StatelessWidget {
+  /// List containing all the paths of the app.
   final List<NavElement> routes;
+
+  /// This allows you to change the initial url.
+  ///
+  /// The default value is '/'.
   final String initialUrl;
+
+  /// Two router mode are possible:
+  /// - NavRouterModes.hash: This is the default, the url will be "serverAddress/#/localUrl".
+  /// - NavRouterModes.history: This will display the url in the way we are used to, without the "#".
+  ///
+  /// However note that you will need to configure your server to make this work.
   final NavRouterModes routerMode;
 
   // MaterialApp parameters
