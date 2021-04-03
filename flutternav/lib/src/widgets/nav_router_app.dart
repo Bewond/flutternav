@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:vrouter/vrouter.dart';
 
 import 'package:flutternav/src/elements/nav_element.dart';
@@ -7,7 +6,7 @@ import 'package:flutternav/src/elements/nav_element.dart';
 /// See [NavRouterApp.routerMode].
 enum NavRouterModes { hash, history }
 
-/// Flutternav use [NavRouterApp] instead of [MaterialApp] or [CupertinoApp].
+/// Flutternav uses [NavRouterApp] instead of [MaterialApp] or [CupertinoApp].
 ///
 /// You can pass all the parameters you would normally use plus some new ones
 /// like [routes] to define the app routes through the use of [NavElement] objects.
