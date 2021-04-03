@@ -1,7 +1,8 @@
 name: flutternav
-description: A new Flutter package.
+description: A Flutter package to simplify the use of the navigation and routing system that works consistently across all platforms.
 version: 0.2.1
 homepage: https://github.com/Bewond/flutternav
+repository: https://github.com/Bewond/flutternav
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
