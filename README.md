@@ -34,10 +34,7 @@ flutter pub get
 ```
 
 ## Documentation
-### Base example
-This example shows how to use Flutternav in a simple app.
 
-**Main** (`main.dart`): \
 Use `NavRouterApp` instead of `MaterialApp` or `CupertinoApp`, you can pass all parameters you would normally use with `MaterialApp` plus some new ones:
 - `routes`: list of `NavElement` elements to define routes (required)
 - `initialUrl`: the initial path (default: '/')
