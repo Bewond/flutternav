@@ -48,7 +48,6 @@ class MyApp extends StatelessWidget {
     return NavRouterApp(
       title: 'Flutternav Demo',
       debugShowCheckedModeBanner: false,
-      routerMode: NavRouterModes.history,
       initialUrl: '/',
       routes: [
         NavRoute(path: '/', widget: MainScreen()),
