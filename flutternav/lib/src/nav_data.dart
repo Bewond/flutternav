@@ -10,10 +10,10 @@ class NavData {
 
   const NavData(this._buildContext);
 
-  /// Maps all route parameters.
+  /// Maps all route parameters of the current url.
   ///
-  /// Note that if you have multiple parameters with the same
-  /// name, only the last one will be visible.
+  /// Note that if you have multiple parameters
+  /// with the same name,only the last one will be visible.
   Map<String, String> get pathData => _buildContext.vRouter.pathParameters;
 
   /// Maps all query parameters of the current url.
@@ -75,7 +75,7 @@ class NavData {
   /// Replace the current one by the new route corresponding to the given url.
   ///
   /// The difference with [push] is that this overwrites the current browser history entry.
-  /// If you are on mobile, this is the same as push.
+  /// (If you are on mobile, this is the same as push).
   ///
   /// A path can be of one of two forms:
   /// - Stating with '/', in which case we just navigate to the given path.
@@ -95,6 +95,8 @@ class NavData {
   /// Replace the url given a [NavElement] name.
   ///
   /// The difference with [pushNamed] is that this overwrites the current browser history entry.
+  /// (If you are on mobile, this is the same as pushNamed).
+  ///
   /// You can also specify path parameters to inject into the new path.
   void pushReplacementNamed(
     String name, {
@@ -112,7 +114,7 @@ class NavData {
 
   /// Goes to an url which is not in the app.
   ///
-  /// On the web, you can set [openNewTab] to true to open this url in a new tab.
+  /// On the web, you can set [openNewTab] to open this url in a new tab.
   void pushExternal(
     String newUrl, {
     bool openNewTab = false,
