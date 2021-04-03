@@ -97,10 +97,6 @@ NavRedirector(
 ),
 ```
 
-### Named route
-
-Naming a route for easier navigation using the name attribute of any `NavElement` that has a path.
-
 ### Path parameters
 
 To use the path parameters just add ":paramName" to the route path:
@@ -134,6 +130,10 @@ Pushing an external route:
 ```dart
 context.nav.pushExternal('https://www.google.com/');
 ```
+
+### Named route
+
+Naming a route for easier navigation using the name attribute of any `NavElement` that has a path.
 
 ---
 
