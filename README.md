@@ -109,7 +109,7 @@ NavRoute(
 ),
 ```
 
-To retrieve the parameter value:
+To retrieve the parameter value in the widget:
 ```dart
 String? id = context.nav.pathData['id'];
 ```
