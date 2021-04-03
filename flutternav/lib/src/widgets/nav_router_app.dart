@@ -12,7 +12,7 @@ enum NavRouterModes { hash, history }
 /// You can pass all the parameters you would normally use plus some new ones
 /// like [routes] to define the app routes through the use of [NavElement] objects.
 class NavRouterApp extends StatelessWidget {
-  /// List containing all the paths of the app.
+  /// List containing all the routes of the app.
   final List<NavElement> routes;
 
   /// This allows you to change the initial url.
