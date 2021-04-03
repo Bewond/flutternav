@@ -37,7 +37,7 @@ flutter pub get
 
 ## Documentation
 
-Use `NavRouterApp` instead of `MaterialApp` or `CupertinoApp`, you can pass all the parameters you would normally use plus some new ones like `routes` to define the app routes through the use of `NavElement` objects.
+Flutternav use `NavRouterApp` instead of `MaterialApp` or `CupertinoApp`, you can pass all the parameters you would normally use plus some new ones like `routes` to define the app routes through the use of `NavElement` objects.
 
 ```dart
 class MyApp extends StatelessWidget {
