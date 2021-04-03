@@ -103,7 +103,7 @@ Naming a route for easier navigation using the name attribute of any `NavElement
 
 ### Path parameters
 
-To use the path parameters just add ':paramName' to the route path:
+To use the path parameters just add ":paramName" to the route path:
 
 ```dart
 NavRoute(
@@ -122,7 +122,7 @@ String? id = context.nav.pathData['id'];
 
 Available methods for navigating between routes.
 
-Pushing a new url, is relative if you omit the '/':
+Pushing a new url, is relative if you omit the "/":
 ```dart
 context.nav.push('/menu/page1');
 ```
