@@ -11,9 +11,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NavRouterApp(
-      title: 'Flutter Demo',
+      title: 'Flutternav Demo',
       debugShowCheckedModeBanner: false,
-      routerMode: NavRouterModes.hash,
+      routerMode: NavRouterModes.history,
       initialUrl: '/',
       routes: [
         NavRoute(
