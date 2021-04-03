@@ -118,7 +118,7 @@ String? id = context.nav.pathData['id'];
 
 Available methods for navigating between routes.
 
-Pushing a new url, is relative if you omit the "/":
+Pushing a path, is relative if you omit the "/":
 ```dart
 context.nav.push('/menu/page1');
 ```
@@ -126,7 +126,7 @@ Pushing a named route:
 ```dart
 context.nav.pushNamed('page1');
 ```
-Pushing an external route:
+Pushing an external url:
 ```dart
 context.nav.pushExternal('https://www.google.com/');
 ```
