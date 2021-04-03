@@ -60,8 +60,6 @@ class MyApp extends StatelessWidget {
 
 ### NavElement objects
 
-Naming a route for easier navigation using the name attribute of any `NavElement` that has a path.
-
 **NavRoute** \
 Used to display the given widget if the path is matched, you can stack widget from other `NavElement` on top of the given widget.
 
@@ -98,6 +96,10 @@ NavRedirector(
   redirect: '/404',
 ),
 ```
+
+### Named route
+
+Naming a route for easier navigation using the name attribute of any `NavElement` that has a path.
 
 ### Path parameters
 
