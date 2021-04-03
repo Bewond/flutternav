@@ -3,6 +3,7 @@
 </p>
 
 ## Overview
+
 A library for [Flutter](https://flutter.dev/) to simplify the use of the [navigation and routing system](https://flutter.dev/docs/development/ui/navigation) that it works consistently on all platforms, including the web.
 It builds on the features offered by the new API [Navigator 2.0](https://docs.google.com/document/d/1Q0jx0l4-xymph9O6zLaOY4d_f7YFpNWX_eGbzYxr9wY/edit#heading=h.l6kdsrb6j9id) which allows for more precise control over app screens and how to analyze routes.
 
@@ -18,6 +19,7 @@ However it implements a subset of the features offered by VRouter, the goal is t
 
 
 ## Installing
+
 #### Depend
 Add this to your package's pubspec.yaml file:
 ```yaml
@@ -34,6 +36,7 @@ flutter pub get
 ```
 
 ## Documentation
+
 Use `NavRouterApp` instead of `MaterialApp` or `CupertinoApp`, you can pass all the parameters you would normally use plus some new ones like `routes` to define the app routes through the use of `NavElement` objects.
 
 ```dart
@@ -45,27 +48,42 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routerMode: NavRouterModes.history,
       routes: [
-        NavRoute(
-          path: '/',
-          widget: MainScreen(),
-          stacked: [
-            NavRoute(path: 'details/:id', widget: DetailsScreen()),
-          ],
-        ),
-        NavSubRoute(
-          path: '/menu',
-          build: (child) => MenuScreen(page: child),
-          nested: [
-            NavRoute(path: 'page1', widget: Page1()),
-            NavRoute(path: 'page2', widget: Page2()),
-          ],
-        ),
+        NavRoute(path: '/', widget: MainScreen()),
         NavRoute(path: '/404', widget: UnknownScreen()),
         NavRedirector(path: ':_(.+)', redirect: '/404'),
       ],
     );
   }
 }
+```
+
+### NavElement objects
+
+**NavRoute** \
+Used to display the given widget if the path is matched, you can stack widget from other `NavElement` on top of the given widget.
+
+```dart
+NavRoute(
+  path: '/',
+  widget: MainScreen(),
+  stacked: [
+    NavRoute(path: 'details/:id', widget: DetailsScreen()),
+  ],
+)
+```
+
+**NavSubRoute** \
+Used to nest your widgets. In this example, the MenuScreen widget receives a different page as a child depending on the path.
+
+```dart
+NavSubRoute(
+  path: '/menu',
+  build: (child) => MenuScreen(page: child),
+  nested: [
+    NavRoute(path: 'page1', widget: Page1()),
+    NavRoute(path: 'page2', widget: Page2()),
+  ],
+),
 ```
 
 **Navigate** (`main_screen.dart`, `details_screen.dart`): \
