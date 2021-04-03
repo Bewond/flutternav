@@ -133,10 +133,10 @@ context.nav.pushExternal('https://www.google.com/');
 Naming a route for easier navigation using the name attribute of any `NavElement` that has a path.
 
 ### NavRouterModes
-Two router mode are possible:
+With the routerMode parameter of `NavRouterApp` you can choose between:
 
-- "hash": This is the default, the url will be "serverAddress/#/localUrl"
-- "history": This will display the url in the way we are used to, without the "#". However note that you will need to [configure your server](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations) to make this work.
+- `NavRouterModes.hash`: This is the default, the url will be "serverAddress/#/localUrl"
+- `NavRouterModes.history`: This will display the url in the way we are used to, without the "#". However note that you will need to [configure your server](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations) to make this work.
 
 ---
 
