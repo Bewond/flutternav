@@ -60,6 +60,8 @@ class MyApp extends StatelessWidget {
 
 ### NavElement objects
 
+Naming a route for easier navigation using the name attribute of any `NavElement` that has a path.
+
 **NavRoute** \
 Used to display the given widget if the path is matched, you can stack widget from other `NavElement` on top of the given widget.
 
@@ -97,7 +99,22 @@ NavRedirector(
 ),
 ```
 
-Naming a route for easier navigation using the name attribute of any `NavElement` that has a path.
+### Path parameters
+
+To use the path parameters just add ':paramName' to the route path:
+
+```dart
+NavRoute(
+  path: 'details/:id',
+  widget: DetailsScreen(),
+),
+```
+
+To retrieve the parameter value:
+
+```dart
+String? id = context.nav.pathData['id'];
+```
 
 ### Navigate
 
