@@ -250,7 +250,7 @@
         <entry key="vrouter">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/vrouter-1.1.0+15/lib" />
+              <option value="$PROJECT_DIR$/../../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/vrouter-1.1.0+16/lib" />
             </list>
           </value>
         </entry>
@@ -288,7 +288,7 @@
       <root url="file://$PROJECT_DIR$/../../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_windows-2.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/url_strategy-0.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.0/lib" />
-      <root url="file://$PROJECT_DIR$/../../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/vrouter-1.1.0+15/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/vrouter-1.1.0+16/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Src/flutter/bin/cache/pkg/sky_engine/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Src/flutter/packages/flutter/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../Src/flutter/packages/flutter_test/lib" />

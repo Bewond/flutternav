@@ -13,7 +13,7 @@ dependencies:
     sdk: flutter
   #
   pedantic: ^1.11.0
-  vrouter: ^1.1.0+15
+  vrouter: ^1.1.0+16
 
 dev_dependencies:
   flutter_test:
