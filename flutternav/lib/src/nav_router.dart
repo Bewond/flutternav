@@ -6,12 +6,15 @@ import 'package:flutternav/src/elements/nav_element.dart';
 /// See [NavRouter.routerMode].
 enum NavRouterModes { hash, history }
 
-/// TODO
+/// Flutternav uses [NavRouter] to configure the routing settings.
+///
+/// You can pass it several parameters like [routes] to define
+/// the app routes through the use of [NavElement] objects.
 class NavRouter {
   /// List containing all the routes of the app.
   final List<NavElement> routes;
 
-  /// This allows you to change the initial url.
+  /// Allows you to change the initial url.
   ///
   /// The default value is '/'.
   final String initialUrl;
@@ -23,13 +26,13 @@ class NavRouter {
   /// However note that you will need to configure your server to make this work.
   final NavRouterModes routerMode;
 
-  /// TODO
+  /// {@macro flutter.widgets.widgetsApp.routerDelegate}
   late final RouterDelegate<RouteInformation> routerDelegate;
 
-  /// TODO
+  /// {@macro flutter.widgets.widgetsApp.routeInformationParser}
   late final RouteInformationParser<RouteInformation> routeInformationParser;
 
-  /// TODO
+  /// {@macro flutter.widgets.widgetsApp.backButtonDispatcher}
   late final RootBackButtonDispatcher backButtonDispatcher;
 
   NavRouter({
