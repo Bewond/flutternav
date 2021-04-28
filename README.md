@@ -39,21 +39,31 @@ flutter pub get
 
 ## Documentation
 
-Flutternav uses `NavRouterApp` instead of `MaterialApp` or `CupertinoApp`, you can pass all the parameters you would normally use plus some new ones like `routes` to define the app routes through the use of `NavElement` objects.
+Flutternav uses `NavRouter` to configure the routing settings,
+you can pass several parameters like `routes` to define the app routes through the use of `NavElement` objects.
+
+Then it is necessary to use the `MaterialApp.router` widget (or equivalent) and pass it the information from the previously defined `NavRouter` object using the `routeInformationParser`, `routerDelegate` and `backButtonDispatcher` parameters.
 
 ```dart
 class MyApp extends StatelessWidget {
+  NavRouter router = NavRouter(
+    routes: [
+      NavRoute(path: '/', widget: MainScreen()),
+      NavRoute(path: '/404', widget: UnknownScreen()),
+      NavRedirector(path: ':_(.+)', redirect: '/404'),
+    ],
+    initialUrl: '/',
+    routerMode: NavRouterModes.history,
+  );
+
   @override
   Widget build(BuildContext context) {
-    return NavRouterApp(
+    return MaterialApp.router(
       title: 'Flutternav Demo',
       debugShowCheckedModeBanner: false,
-      initialUrl: '/',
-      routes: [
-        NavRoute(path: '/', widget: MainScreen()),
-        NavRoute(path: '/404', widget: UnknownScreen()),
-        NavRedirector(path: ':_(.+)', redirect: '/404'),
-      ],
+      routeInformationParser: router.routeInformationParser,
+      routerDelegate: router.routerDelegate,
+      backButtonDispatcher: router.backButtonDispatcher,
     );
   }
 }
