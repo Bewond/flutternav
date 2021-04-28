@@ -10,30 +10,29 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return NavRouterApp(
-      title: 'Flutternav Demo',
-      debugShowCheckedModeBanner: false,
-      routerMode: NavRouterModes.history,
-      initialUrl: '/',
-      routes: [
-        NavRoute(
-          path: '/',
-          widget: MainScreen(),
-          stacked: [
-            NavRoute(path: 'details/:id', widget: DetailsScreen()),
-          ],
-        ),
-        NavSubRoute(
-          path: '/menu',
-          build: (child) => MenuScreen(page: child),
-          nested: [
-            NavRoute(path: 'page1', widget: Page1()),
-            NavRoute(path: 'page2', widget: Page2()),
-          ],
-        ),
-        NavRoute(path: '/404', widget: UnknownScreen()),
-        NavRedirector(path: ':_(.+)', redirect: '/404'),
-      ],
+    var routes = [
+      NavRoute(
+        path: '/',
+        widget: MainScreen(),
+        stacked: [
+          NavRoute(path: 'details/:id', widget: DetailsScreen()),
+        ],
+      ),
+      NavSubRoute(
+        path: '/menu',
+        build: (child) => MenuScreen(page: child),
+        nested: [
+          NavRoute(path: 'page1', widget: Page1()),
+          NavRoute(path: 'page2', widget: Page2()),
+        ],
+      ),
+      NavRoute(path: '/404', widget: UnknownScreen()),
+      NavRedirector(path: ':_(.+)', redirect: '/404'),
+    ];
+
+    return MaterialApp.router(
+      routeInformationParser: VRouteInformationParser(),
+      routerDelegate: routerDelegate,
     );
   }
 }
