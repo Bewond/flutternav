@@ -110,12 +110,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "simple_url_handler",
-      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/simple_url_handler-1.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "sky_engine",
       "rootUri": "file:///D:/Src/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -153,7 +147,7 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.2.19",
+      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.3.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -213,7 +207,7 @@
     },
     {
       "name": "vrouter",
-      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/vrouter-1.1.0+16",
+      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/vrouter-1.1.1+2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -224,7 +218,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-04-08T20:04:56.814015Z",
+  "generated": "2021-04-28T13:29:56.502919Z",
   "generator": "pub",
-  "generatorVersion": "2.13.0-116.0.dev"
+  "generatorVersion": "2.14.0-18.0.dev"
 }
