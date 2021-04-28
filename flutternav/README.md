@@ -17,21 +17,31 @@ However it implements a subset of the features offered by VRouter, the goal is t
 
 ## Documentation
 
-Flutternav uses `NavRouterApp` instead of `MaterialApp` or `CupertinoApp`, you can pass all the parameters you would normally use plus some new ones like `routes` to define the app routes through the use of `NavElement` objects.
+Flutternav uses `NavRouter` to configure the routing settings,
+you can pass several parameters like `routes` to define the app routes through the use of `NavElement` objects.
+
+Then it is necessary to use the `MaterialApp.router` widget (or equivalent) and pass it the information from the previously defined `NavRouter` object using the `routeInformationParser`, `routerDelegate` and `backButtonDispatcher` parameters.
 
 ```dart
 class MyApp extends StatelessWidget {
+  NavRouter router = NavRouter(
+    routes: [
+      NavRoute(path: '/', widget: MainScreen()),
+      NavRoute(path: '/404', widget: UnknownScreen()),
+      NavRedirector(path: ':_(.+)', redirect: '/404'),
+    ],
+    initialUrl: '/',
+    routerMode: NavRouterModes.history,
+  );
+
   @override
   Widget build(BuildContext context) {
-    return NavRouterApp(
+    return MaterialApp.router(
       title: 'Flutternav Demo',
       debugShowCheckedModeBanner: false,
-      initialUrl: '/',
-      routes: [
-        NavRoute(path: '/', widget: MainScreen()),
-        NavRoute(path: '/404', widget: UnknownScreen()),
-        NavRedirector(path: ':_(.+)', redirect: '/404'),
-      ],
+      routeInformationParser: router.routeInformationParser,
+      routerDelegate: router.routerDelegate,
+      backButtonDispatcher: router.backButtonDispatcher,
     );
   }
 }
@@ -112,7 +122,7 @@ context.nav.pushExternal('https://www.google.com/');
 Naming a route for easier navigation using the name attribute of any `NavElement` that has a path.
 
 ### NavRouterModes
-With the `routerMode` parameter of `NavRouterApp` you can choose between:
+With the `routerMode` parameter of `NavRouter` you can choose between:
 
 - `NavRouterModes.hash`: This is the default, the url will be "serverAddress/#/localUrl"
 - `NavRouterModes.history`: This will display the url in the way we are used to, without the "#". However note that you will need to [configure your server](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations) to make this work.
