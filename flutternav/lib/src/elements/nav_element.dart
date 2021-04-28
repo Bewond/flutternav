@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 /// Base abstract class which is used to implement several [NavElement].
 ///

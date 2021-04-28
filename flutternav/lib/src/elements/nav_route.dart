@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:vrouter/vrouter.dart';
 
 import 'package:flutternav/src/elements/nav_element.dart';
