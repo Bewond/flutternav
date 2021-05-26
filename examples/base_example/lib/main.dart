@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         NavRedirector(path: ':_(.+)', redirect: '/404'),
       ],
       initialUrl: '/',
-      routerMode: NavRouterModes.history,
+      routerMode: NavRouterModes.hash,
     );
 
     return MaterialApp.router(
