@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
         NavRedirector(path: ':_(.+)', redirect: '/404'),
       ],
       initialUrl: '/',
+      // TODO: Error in history mode when entering url manually on the web.
       routerMode: NavRouterModes.hash,
     );
 

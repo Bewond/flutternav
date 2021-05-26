@@ -77,7 +77,7 @@ packages:
     description:
       path: flutternav
       ref: HEAD
-      resolved-ref: a1d122b3c76cb17fd3a2904654f3e97c160f4ac9
+      resolved-ref: "6f4100a60d928bd0d9408527767d400df7d8cb50"
       url: "git://github.com/bewond/flutternav.git"
     source: git
     version: "0.3.2"
@@ -253,7 +253,7 @@ packages:
       name: vrouter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.3"
+    version: "1.1.3+2"
 sdks:
-  dart: ">=2.12.0 <3.0.0"
+  dart: ">=2.13.0 <3.0.0"
   flutter: ">=1.22.0"
