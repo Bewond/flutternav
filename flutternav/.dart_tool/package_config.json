@@ -3,7 +3,7 @@
   "packages": [
     {
       "name": "async",
-      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.5.0",
+      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.6.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -159,7 +159,7 @@
     },
     {
       "name": "url_launcher",
-      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.3",
+      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -177,7 +177,7 @@
     },
     {
       "name": "url_launcher_platform_interface",
-      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_platform_interface-2.0.2",
+      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_platform_interface-2.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -207,9 +207,9 @@
     },
     {
       "name": "vrouter",
-      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/vrouter-1.1.1+2",
+      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/vrouter-1.1.4",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.13"
     },
     {
       "name": "flutternav",
@@ -218,7 +218,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-04-28T15:02:46.088216Z",
+  "generated": "2021-05-26T17:33:25.915789Z",
   "generator": "pub",
-  "generatorVersion": "2.14.0-18.0.dev"
+  "generatorVersion": "2.14.0-edge.a527411e5100a0a4f48c4009087a1b988aa784af"
 }
