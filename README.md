@@ -1,6 +1,9 @@
-<p align="center">
-<img src="/docs/assets/flutternav.png" width="100%" alt="Flutternav" />
-</p>
+<h1 align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/docs/assets/flutternav_dark.png">
+    <img alt="Flutternav" src="/docs/assets/flutternav.png">
+  </picture>
+</h1>
 
 ## Overview
 
@@ -14,16 +17,18 @@ However it implements a subset of the features offered by VRouter, the goal is t
 
 - [Installing](#installing)
 - [Documentation](#documentation)
-  * [NavElement objects](#navelement-objects)
-  * [Path parameters](#path-parameters)
-  * [Navigate](#navigate)
-  * [Named route](#named-route)
+  - [NavElement objects](#navelement)
+  - [Path parameters](#path-parameters)
+  - [Navigate](#navigate)
+  - [Named route](#named-route)
 - [Maintainers](#maintainers)
 
 ## Installing
 
 #### Depend
+
 Add this to your package's pubspec.yaml file:
+
 ```yaml
 dependencies:
   flutternav:
@@ -31,8 +36,11 @@ dependencies:
       url: git://github.com/bewond/flutternav.git
       path: flutternav
 ```
+
 #### Install
+
 You can install packages from the command line:
+
 ```shell
 flutter pub get
 ```
@@ -75,6 +83,7 @@ class MyApp extends StatelessWidget {
 
 **NavRoute** \
 Used to display the given widget if the path is matched, you can stack widget from other `NavElement` on top of the given widget.
+
 ```dart
 NavRoute(
   path: '/',
@@ -87,6 +96,7 @@ NavRoute(
 
 **NavSubRoute** \
 Used to nest widgets. In this example, the MenuScreen widget receives a different page as a child depending on the path.
+
 ```dart
 NavSubRoute(
   path: '/menu',
@@ -111,6 +121,7 @@ NavRedirector(
 ### Path parameters
 
 To use the path parameters just add ":paramName" to the route path:
+
 ```dart
 NavRoute(
   path: 'details/:id',
@@ -119,6 +130,7 @@ NavRoute(
 ```
 
 To retrieve the parameter value in the widget:
+
 ```dart
 String? id = context.nav.pathData['id'];
 ```
@@ -128,22 +140,29 @@ String? id = context.nav.pathData['id'];
 Available methods for navigating between routes.
 
 Pushing a path, is relative if you omit the "/":
+
 ```dart
 context.nav.push('/menu/page1');
 ```
+
 Pushing a named route:
+
 ```dart
 context.nav.pushNamed('page1');
 ```
+
 Pushing an external url:
+
 ```dart
 context.nav.pushExternal('https://www.google.com/');
 ```
 
 ### Named route
+
 Naming a route for easier navigation using the name attribute of any `NavElement` that has a path.
 
 ### NavRouterModes
+
 With the `routerMode` parameter of `NavRouter` you can choose between:
 
 - `NavRouterModes.hash`: This is the default, the url will be "serverAddress/#/localUrl"
@@ -152,4 +171,5 @@ With the `routerMode` parameter of `NavRouter` you can choose between:
 ---
 
 ## Maintainers
+
 - [Riccardo Brero](https://github.com/Riki1312)
